@@ -2,8 +2,11 @@ package com.codepath.android.booksearch.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,8 +32,20 @@ public class BookDetailActivity extends AppCompatActivity {
         // Checkpoint #5
         // Reuse the Toolbar previously used in the detailed activity by referring to this guide
         // Follow using a Toolbar guide to set the Toolbar as the ActionBar.
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
+
+
         // Change activity title to reflect the book title by referring to the Configuring The ActionBar guide.
         // (Bonus) Get additional book information like publisher and publish_year from the Books API and display in details view.
+    }
+
+    public void onSubmit(View v) {
+        // closes the activity and returns to first screen
+        this.finish();
     }
 
 

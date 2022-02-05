@@ -1,5 +1,6 @@
 package com.codepath.android.booksearch.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,10 +71,12 @@ public class BookListActivity extends AppCompatActivity {
                 // Hook up Book Detail View
                 // see https://guides.codepath.org/android/Using-the-RecyclerView#attaching-click-handlers-using-listeners for setting up click listeners
 
+
                 // Create Intent to start BookDetailActivity
                 // Get Book at the given position
                 // Pass the book into details activity using extras
                 // see http://guides.codepath.org/android/Using-Intents-to-Create-Flows
+                
             }
         });
 
@@ -85,6 +88,12 @@ public class BookListActivity extends AppCompatActivity {
 
         // Fetch the data remotely
         //fetchBooks("Oscar Wilde");
+    }
+
+    public void launchComposeView() {
+        // first parameter is the context, second is the class of the activity to launch
+        Intent i = new Intent(BookListActivity.this, BookDetailActivity.class);
+        startActivity(i); // brings up the second activity
     }
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
